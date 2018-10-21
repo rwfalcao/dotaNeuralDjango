@@ -1,0 +1,13 @@
+.main-header{
+    padding-left: 40px;
+}
+
+.heroList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.heroList .card{
+    max-width: 250px;
+}

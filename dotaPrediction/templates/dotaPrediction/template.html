@@ -1,0 +1,21 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    </head>
+    <title>Dota Match Prediction</title>
+    <body>
+    <nav>
+        <div class="nav-wrapper indigo main-header">
+            <a href="#" class="brand-logo">Dota 2 Win Prediction</a>
+
+        </div>
+    </nav>
+        {% block content %}
+        {% endblock %}
+    </body>
+</html>
