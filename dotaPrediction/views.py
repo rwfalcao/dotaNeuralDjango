@@ -1,9 +1,17 @@
 from django.shortcuts import render
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
 from django.template.loader import render_to_string
 from .models import *
 import dota2api as dota2api
 import json
+from keras.utils import to_categorical
+from keras import models
+from keras import layers
+from keras.models import load_model
+from django.contrib.staticfiles.storage import staticfiles_storage
+import tensorflow as tf
+from .neural import neuralNetwork
+
 
 
 
@@ -81,11 +89,32 @@ def winnerTeam(request, compPk):
         comp = Composition.objects.get(pk=compPk)
         compArray = [0] * 113
 
-        for hero in comp.teamZero:
+        for hero in comp.teamZero.all():
                 compArray[hero.heroApiId-1] = -1
         
-        for hero in comp.teamOne:
+        for hero in comp.teamOne.all():
                 compArray[hero.heroApiId-1] = 1
+
+        result = neuralNetwork(compArray)
+
+        if result[0][0] > result[0][1]:
+                final = 'Time One'
+        else:         
+                final = 'Time Zero'
+                
+       
+        return HttpResponse(final)
+
+        
+'''
+        with tf.Session():
+                
+'''
+
+        
+
+        
+
 
         
 

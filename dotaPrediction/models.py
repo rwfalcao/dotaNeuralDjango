@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Hero(models.Model):
     heroApiId = models.IntegerField()
     name = models.CharField(max_length=200)                   
