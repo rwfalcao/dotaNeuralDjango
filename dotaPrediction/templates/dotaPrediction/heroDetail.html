@@ -4,7 +4,7 @@
         <div class="card-image waves-effect waves-block waves-light small">
           <img class="activator" src="{{hero.url_full_portrait}}">
         </div>
-        <div class="card-content">
+        <div class="card-content" onclick="pick('{% url 'pickHero' compPk=composition.id heroPk=hero.id %}')">
           <span class="card-title activator grey-text text-darken-4">{{hero.localized_name}}</span>
         </div>
 </div>

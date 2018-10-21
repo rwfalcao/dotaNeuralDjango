@@ -2,11 +2,19 @@
 {% load staticfiles %}
 
 {% block content %}
-<h2>Hero List</h2>
+    <h2>Hero List</h2>
     <div class="heroList">
         {% for hero in heroes %}
             {% include 'dotaPrediction/heroDetail.html' %}
         {% endfor %}
+    </div>
+    <div class="heroPicks z-depth-3 grey lighten-5">
+        <div class="teamZero"></div>
+        <div class='versus'>
+            <h2>VS</h2>
+            <a href="{% url 'winnerTeam' compPk=composition.id %}" class="waves-effect waves-light btn-small">Calcular</a>
+        </div>
+        <div class="teamOne"></div>
     </div>
 
 {% endblock %}

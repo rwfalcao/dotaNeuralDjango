@@ -12,3 +12,11 @@ class Hero(models.Model):
     def __str__(self):
         return self.name
 
+class Composition(models.Model):
+    teamZero = models.ManyToManyField(Hero, related_name='team_zero_set')
+    teamOne = models.ManyToManyField(Hero, related_name='team_one_set')
+
+
+
+    
+
