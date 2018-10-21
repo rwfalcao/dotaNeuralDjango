@@ -5,14 +5,7 @@
 <h2>Hero List</h2>
     <div class="heroList">
         {% for hero in heroes %}
-            <div class="card">
-                    <div class="card-image waves-effect waves-block waves-light small">
-                      <img class="activator" src="{{hero.url_full_portrait}}">
-                    </div>
-                    <div class="card-content">
-                      <span class="card-title activator grey-text text-darken-4">{{hero.localized_name}}</span>
-                    </div>
-            </div>
+            {% include 'dotaPrediction/heroDetail.html' %}
         {% endfor %}
     </div>
 

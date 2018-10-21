@@ -26,7 +26,7 @@ def heroList(request):
             newHero.save()
     heroesDict = {}
     heroesDict['heroes'] = Hero.objects.all()
-
     
-
     return render(request, 'dotaPrediction/heroList.html', heroesDict)
+
+
