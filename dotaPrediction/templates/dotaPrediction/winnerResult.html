@@ -1,0 +1,23 @@
+{% extends 'dotaPrediction/template.html' %}
+{% load staticfiles %}
+
+{% block content %}
+
+    <h2>Winner Team</h2>
+    <div class="winners">
+        {% for hero in winnerComp %}
+            {% include 'dotaPrediction/resultHeroDetail.html' %}
+        {% endfor %}
+    </div>
+
+    <h2>Loser Team</h2>
+    <div class="losers">
+        {% for hero in loserComp %}
+            {% include 'dotaPrediction/resultHeroDetail.html' %}
+        {% endfor %}
+    </div>
+    
+    
+{% endblock %}
+
+        

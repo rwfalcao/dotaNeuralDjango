@@ -47,3 +47,22 @@
     
     
 }
+
+.winners,
+.losers {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.teamZero img,
+.teamOne img{
+    width: 90px;
+}
+
+@media (max-width: 600px) 
+{
+  .teamOne img,
+  .teamZero img{
+    width: 80px;
+   }
+}

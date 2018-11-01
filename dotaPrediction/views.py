@@ -97,19 +97,26 @@ def winnerTeam(request, compPk):
 
         result = neuralNetwork(compArray)
 
-        if result[0][0] > result[0][1]:
-                final = 'Time One'
-        else:         
-                final = 'Time Zero'
-                
-       
-        return HttpResponse(final)
-
+        resultDict = dict()
         
-'''
-        with tf.Session():
-                
-'''
+        if result[0][0] > result[0][1]:
+                winnerId = 1
+                final = 'Time One'
+                resultDict['winnerComp'] = comp.teamOne.all()
+                resultDict['loserComp'] = comp.teamZero.all()
+        else: 
+                winnerId = 0      
+                final = 'Time Zero'
+                resultDict['loserComp'] = comp.teamOne.all()
+                resultDict['winnerComp'] = comp.teamZero.all()
+        
+        resultDict['comp'] = comp
+
+                      
+        return render(request, 'dotaPrediction/winnerResult.html', resultDict)
+        #return HttpResponse(final)
+
+
 
         
 
