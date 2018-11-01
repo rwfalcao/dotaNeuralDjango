@@ -17,6 +17,7 @@ from .neural import neuralNetwork
 
 # Create your views here.
 
+
 def heroList(request):
     if not Hero.objects.all():
         api = dota2api.Initialise('FCEE1CD700BDB6325239D78360CC40C5')

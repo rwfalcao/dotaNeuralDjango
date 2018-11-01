@@ -4,7 +4,7 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('dotaPredict/', include('dotaPrediction.urls')),
+    path('dotaPredict/', include('dotaPrediction.urls'), name="dotaPredict"),
     path('predict/', views.predict),
     path('', views.index)
 ]

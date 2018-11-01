@@ -52,11 +52,24 @@
 .losers {
     display: flex;
     justify-content: space-evenly;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.winners .card,
+.losers .card{
+    margin: 0 5px;
+}
+
+.winnderBtn{
+    text-align: center;
+    margin: 70px 0;
 }
 
 .teamZero img,
 .teamOne img{
     width: 90px;
+    
 }
 
 @media (max-width: 600px) 
