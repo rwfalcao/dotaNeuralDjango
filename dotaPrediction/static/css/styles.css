@@ -66,16 +66,29 @@
     margin: 70px 0;
 }
 
-.teamZero img,
-.teamOne img{
-    width: 90px;
-    
-}
 
-@media (max-width: 600px) 
+
+
+@media (min-width: 1201px) and (max-width: 1550px) 
 {
   .teamOne img,
   .teamZero img{
     width: 80px;
+   }
+
+   .heroPicks{
+    height: 135px;
+   }
+}
+
+@media (max-width: 1200px) 
+{
+  .teamOne img,
+  .teamZero img{
+    width: 60px;
+   }
+
+   .heroPicks{
+    height: 135px;
    }
 }
